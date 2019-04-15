@@ -1,0 +1,71 @@
+<launch>
+<node pkg="GPSNode" type="GPSNode_node" name="G1" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~spoof" value="0" />
+  <param name="~output1" value="G1" />
+  <param name="~lat" value="36.8507689" />
+  <param name="~long" value="-76.2858726" />
+  <param name="~SatNum" value="1" />
+  <param name="~D" value="20000" />
+  <param name="~Quality" value="10" />
+</node>
+
+<node pkg="GPSNode" type="GPSNode_node" name="G2" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~spoof" value="0" />
+  <param name="~output1" value="G2" />
+  <param name="~lat" value="41.5144584" />
+  <param name="~long" value="-84.2858726" />
+  <param name="~SatNum" value="2" />
+  <param name="~D" value="20500" />
+  <param name="~Quality" value="20" />
+</node>
+
+<node pkg="GPSNode" type="GPSNode_node" name="G3" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~spoof" value="0" />
+  <param name="~output1" value="G3" />
+  <param name="~lat" value="46.1781479" />
+  <param name="~long" value="-30.2858726" />
+  <param name="~SatNum" value="3" />
+  <param name="~D" value="21000" />
+  <param name="~Quality" value="4" />
+</node>
+
+<node pkg="GPSNode" type="GPSNode_node" name="G4" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~spoof" value="0" />
+  <param name="~output1" value="G4" />
+  <param name="~lat" value="50.8418374" />
+  <param name="~long" value="-55.2858726" />
+  <param name="~SatNum" value="4" />
+  <param name="~D" value="21500" />
+  <param name="~Quality" value="16" />
+</node>
+
+<node pkg="GPSNode" type="GPSNode_node" name="G5" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~spoof" value="0" />
+  <param name="~output1" value="G5" />
+  <param name="~lat" value="50.8418374" />
+  <param name="~long" value="-70.2858726" />
+  <param name="~SatNum" value="5" />
+  <param name="~D" value="24500" />
+  <param name="~Quality" value="13" />
+</node>
+
+<node pkg="GPS_Filter" type="GPS_Filter_node" name="Filter" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~input1" value="G1" />
+  <param name="~input2" value="G2" />
+  <param name="~input3" value="G3" />
+  <param name="~input4" value="G4" />
+  <param name="~input5" value="G5" />
+  <param name="~output1" value="Gs1" />
+  <param name="~output2" value="Gs2" />
+  <param name="~output3" value="Gs3" />
+  <param name="~output4" value="Gs4" />
+</node>
+
+<node pkg="ReceiverNode" type="ReceiverNode_node" name="RS" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~input1" value="Gs1" />
+  <param name="~input2" value="Gs2" />
+  <param name="~input3" value="Gs3" />
+  <param name="~input4" value="Gs4" />
+</node>
+
+</launch>

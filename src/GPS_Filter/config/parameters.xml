@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<parameters>
+	<rover x="0.0" y="0.0" theta="0.0" rotationSpeed="23.0" translationSpeed="7.0" update="6"></rover>
+</parameters>

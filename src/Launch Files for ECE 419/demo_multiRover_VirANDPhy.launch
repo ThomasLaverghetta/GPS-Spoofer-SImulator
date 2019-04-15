@@ -1,0 +1,12 @@
+<launch>
+
+<!-- Add Error Model (Rover Model) -->
+  <!-- Sense -->
+  <!-- Detecting Virtual Object with mode 1 -->
+<node pkg="ECE419_Test1" type="ECE419_Test1_node" name="T1" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~output1" value="Testing" />
+</node>
+<node pkg="ECE419_Test2" type="ECE419_Test2_node" name="T2" output="screen" launch-prefix="xterm -e " required="true">
+  <param name="~input1" value="Testing" />
+</node>
+</launch>
